@@ -5,3 +5,7 @@ https://gustavclausen1804.github.io/pisa_2022_visualization/
 ```bash
 npm run deploy
 ```
+
+# Final TODOs: 
+
+* correct labels on interactive map. 

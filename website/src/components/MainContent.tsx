@@ -190,7 +190,7 @@ const MainContent = () => {
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <div>
               <CardTitle className="text-xl">PISA 2022 Indicators</CardTitle>
-              <CardDescription>Explore educational well-being across Europe</CardDescription>
+              <CardDescription>Explore educational well-being across Europe. Select upto 10 countries by pressing on them. </CardDescription>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
@@ -410,7 +410,7 @@ const MainContent = () => {
           </Card>
         </div>
 
-        <Card className="mb-6">
+        {/* <Card className="mb-6">
           <CardHeader>
             <CardTitle>Research Insights</CardTitle>
             <CardDescription>Academic analysis of the PISA 2022 results</CardDescription>
@@ -440,7 +440,7 @@ const MainContent = () => {
               </div>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </div>
   );

@@ -249,28 +249,10 @@ export const getColorForValue = (value: number, variable: string): string => {
   // Handle NaN values
   if (isNaN(value)) return '#cccccc';
 
-  // Different color schemes based on variable
-  if (variable === 'PV1MATH' || variable === 'PV1READ' || variable === 'PV10SCIE') {
-    // Performance variables (higher is better)
-    if (value >= 500) return '#10b981'; // green
-    if (value >= 470) return '#6366f1'; // blue
-    return '#ef4444'; // red
-  } else if (variable === 'BULLIED') {
-    // Bullying variable (lower is better)
-    if (value <= -0.3) return '#10b981'; // green
-    if (value <= 0) return '#6366f1'; // blue
-    return '#ef4444'; // red
-  } else if (variable === 'ESCS') {
-    // Socioeconomic variable (higher is better)
-    if (value >= 0.3) return '#10b981'; // green
-    if (value >= 0) return '#6366f1'; // blue
-    return '#ef4444'; // red
-  } else {
-    // Default for other variables (higher is better)
-    if (value >= 0.3) return '#10b981'; // green
-    if (value >= 0) return '#6366f1'; // blue
-    return '#ef4444'; // red
-  }
+  // All variables now use the same scale since values are normalized between 0-1
+  if (value >= 0.7) return '#10b981'; // green for high values
+  if (value >= 0.3) return '#6366f1'; // blue for medium values
+  return '#ef4444'; // red for low values
 };
 
 // Calculate Pearson correlation coefficient between two variables

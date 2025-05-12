@@ -1,31 +1,13 @@
-
 import { PISADataRow, getColorForValue } from "@/lib/dataLoader";
 
 // Create legend items based on the selected variable
-export const createLegendItems = (selectedVariable: string): Array<{color: string, label: string}> => {
-  let items: Array<{color: string, label: string}> = [];
-  
-  if (selectedVariable === 'PV1MATH') {
-    items = [
-      { color: '#10b981', label: 'High (≥500)' },
-      { color: '#6366f1', label: 'Medium (470-499)' },
-      { color: '#ef4444', label: 'Low (<470)' }
-    ];
-  } else if (selectedVariable === 'BULLIED') {
-    items = [
-      { color: '#10b981', label: 'Low (≤-0.3)' },
-      { color: '#6366f1', label: 'Medium (-0.3-0)' },
-      { color: '#ef4444', label: 'High (>0)' }
-    ];
-  } else {
-    items = [
-      { color: '#10b981', label: 'High (≥0.3)' },
-      { color: '#6366f1', label: 'Medium (0-0.3)' },
-      { color: '#ef4444', label: 'Low (<0)' }
-    ];
-  }
-  
-  return items;
+export const createLegendItems = (selectedVariable: string): Array<{ color: string, label: string }> => {
+  // All variables now use the same scale since values are normalized between 0-1
+  return [
+    { color: '#10b981', label: 'High (≥0.7)' },
+    { color: '#6366f1', label: 'Medium (0.3-0.7)' },
+    { color: '#ef4444', label: 'Low (<0.3)' }
+  ];
 };
 
 // Update the GeoJSON features with data values and colors
